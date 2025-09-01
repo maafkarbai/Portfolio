@@ -35,7 +35,7 @@ export const metadata = {
     "TypeScript Developer",
     "Frontend Developer",
     "Backend Developer",
-    
+
     // Technologies & Frameworks
     "React",
     "Next.js",
@@ -51,7 +51,7 @@ export const metadata = {
     "GraphQL",
     "Socket.io",
     "Stripe Integration",
-    
+
     // Services & Specializations
     "Web Application Development",
     "E-commerce Development",
@@ -63,7 +63,7 @@ export const metadata = {
     "Custom Web Applications",
     "SaaS Development",
     "Web Performance Optimization",
-    
+
     // Professional
     "Freelance Developer",
     "Remote Developer",
@@ -73,14 +73,19 @@ export const metadata = {
     "Professional Developer",
     "Experienced Developer",
     "Available for Hire",
-    
+
     // Location & Personal
+    "Dubai Developer",
+    "UAE Developer",
+    "Pakistani Developer",
+    "Cybersecurity",
+    "Ethical Hacker",
     "Qatar Developer",
     "Middle East Developer",
     "Abdulla Farooq",
     "Abdullah Farooq",
     "Portfolio Website",
-    "Developer Portfolio"
+    "Developer Portfolio",
   ].join(", "),
   authors: [{ name: "Abdulla Farooq", url: "https://abdullafarooq.com" }],
   creator: "Abdulla Farooq",
@@ -97,8 +102,57 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Abdulla Farooq",
+    alternateName: "Abdullah Farooq",
+    jobTitle: "Full-Stack Developer",
+    description:
+      "Experienced Full-Stack Developer specializing in React, Next.js, Node.js, and modern web applications",
+    url: "https://abdullafarooq.com",
+    email: "voilad8a@gmail.com",
+    telephone: "+97433209192",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "Qatar",
+    },
+    sameAs: [
+      "https://github.com/maafkarbai",
+      "https://linkedin.com/in/abdullafarooq",
+    ],
+    knowsAbout: [
+      "Full-Stack Development",
+      "React",
+      "Next.js",
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "Web Development",
+      "Database Design",
+      "API Development",
+      "E-commerce Development",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Full-Stack Developer",
+      occupationLocation: {
+        "@type": "Country",
+        name: "Qatar",
+      },
+      skills:
+        "React, Next.js, Node.js, JavaScript, TypeScript, PostgreSQL, MongoDB, Tailwind CSS, API Development, Database Design",
+    },
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

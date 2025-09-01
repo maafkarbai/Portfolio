@@ -36,7 +36,7 @@ export async function POST(request) {
 
     // Send email notification (optional)
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-      const transporter = nodemailer.createTransporter({
+      const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT || 587,
         secure: false,
@@ -49,7 +49,7 @@ export async function POST(request) {
       // Handle multiple recipients (comma-separated)
       const recipients = process.env.CONTACT_EMAIL 
         ? process.env.CONTACT_EMAIL.split(',').map(email => email.trim())
-        : [process.env.SMTP_USER];
+        : ['voilad8a@gmail.com'];
 
       // Send email to all recipients
       await transporter.sendMail({

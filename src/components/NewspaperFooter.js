@@ -19,20 +19,20 @@ export default function NewspaperFooter() {
           <div>
             <h4 className="font-bold mb-4 tracking-wider">DEPARTMENTS</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
-              <li><Link href="/resume" className="hover:text-white transition-colors">Resume</Link></li>
-              <li><Link href="/#contact" className="hover:text-white transition-colors">Classifieds</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors cursor-pointer">About</Link></li>
+              <li><Link href="/projects" className="hover:text-white transition-colors cursor-pointer">Projects</Link></li>
+              <li><Link href="/resume" className="hover:text-white transition-colors cursor-pointer">Resume</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors cursor-pointer">Classifieds</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 tracking-wider">CONNECT</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><a href="https://github.com/maafkarbai" className="hover:text-white transition-colors">GitHub Bureau</a></li>
-              <li><a href="https://linkedin.com/in/abdullafarooq" className="hover:text-white transition-colors">LinkedIn Office</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter Wire</a></li>
-              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors">Email Telegraph</a></li>
+              <li><a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer">GitHub Bureau</a></li>
+              <li><a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer">LinkedIn Office</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer">Twitter Wire</a></li>
+              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer">Email Telegraph</a></li>
             </ul>
           </div>
 

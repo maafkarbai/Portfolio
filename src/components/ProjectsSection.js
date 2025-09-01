@@ -30,11 +30,15 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="bg-gray-50 py-16 px-4 border-t-4 border-black">
+    <section 
+      id="projects" 
+      className="bg-gray-50 py-12 px-4 border-t-4 border-black"
+      aria-label="Featured Web Development Projects by Abdulla Farooq"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -83,7 +87,7 @@ export default function ProjectsSection() {
                   <div className="flex gap-4">
                     <motion.a 
                       href={project.demoUrl}
-                      className="bg-black text-white px-6 py-3 font-mono hover:bg-gray-800 transition-colors"
+                      className="bg-black text-white px-6 py-3 font-mono hover:bg-gray-800 transition-colors cursor-pointer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -91,7 +95,7 @@ export default function ProjectsSection() {
                     </motion.a>
                     <motion.a 
                       href={project.githubUrl}
-                      className="border-2 border-black px-6 py-3 font-mono hover:bg-black hover:text-white transition-colors"
+                      className="border-2 border-black px-6 py-3 font-mono hover:bg-black hover:text-white transition-colors cursor-pointer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -140,7 +144,7 @@ export default function ProjectsSection() {
             <p className="font-serif text-lg mb-6">Let's discuss your next project</p>
             <motion.button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-black px-8 py-3 font-mono tracking-wider hover:bg-gray-100 transition-colors border-2 border-white"
+              className="bg-white text-black px-8 py-3 font-mono tracking-wider hover:bg-gray-100 transition-colors border-2 border-white cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

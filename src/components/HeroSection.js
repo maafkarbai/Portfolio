@@ -16,11 +16,15 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="bg-white py-16 px-4">
+    <section 
+      id="hero" 
+      className="bg-white py-8 px-4"
+      aria-label="Abdulla Farooq - Full-Stack Developer Introduction"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Main headline with animation */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -56,7 +60,7 @@ export default function HeroSection() {
           >
             <motion.button 
               onClick={scrollToContact}
-              className="bg-black text-white px-8 py-4 text-lg font-mono tracking-wider hover:bg-gray-800 transition-all duration-300 border-2 border-black"
+              className="bg-black text-white px-8 py-4 text-lg font-mono tracking-wider hover:bg-gray-800 transition-all duration-300 border-2 border-black cursor-pointer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -65,7 +69,7 @@ export default function HeroSection() {
             
             <motion.button 
               onClick={scrollToProjects}
-              className="border-2 border-black px-8 py-4 text-lg font-mono tracking-wider hover:bg-black hover:text-white transition-all duration-300"
+              className="border-2 border-black px-8 py-4 text-lg font-mono tracking-wider hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -76,7 +80,7 @@ export default function HeroSection() {
 
         {/* About section */}
         <motion.div 
-          className="grid md:grid-cols-2 gap-12 mt-16 items-center"
+          className="grid md:grid-cols-2 gap-8 mt-12 items-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -90,10 +94,11 @@ export default function HeroSection() {
             >
               <Image
                 src="/Abdulla Image.jpeg"
-                alt="Abdulla Farooq - Full Stack Developer"
+                alt="Abdulla Farooq - Professional Full-Stack Developer specializing in React, Next.js, and Node.js development"
                 width={400}
                 height={500}
                 className="w-full h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                priority
               />
               <div className="text-center py-3 bg-white border-t-2 border-gray-300">
                 <p className="font-serif text-sm italic">
@@ -142,7 +147,7 @@ export default function HeroSection() {
 
         {/* Social Links */}
         <motion.div 
-          className="flex justify-center gap-6 mt-12 pt-8 border-t border-gray-300"
+          className="flex justify-center gap-6 mt-8 pt-6 border-t border-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.6 }}
@@ -150,7 +155,7 @@ export default function HeroSection() {
           <motion.a 
             href="https://github.com/maafkarbai" 
             target="_blank"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
             GitHub
@@ -158,14 +163,14 @@ export default function HeroSection() {
           <motion.a 
             href="https://linkedin.com/in/abdullafarooq" 
             target="_blank"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
             LinkedIn
           </motion.a>
           <motion.a 
             href="mailto:voilad8a@gmail.com"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
             Email

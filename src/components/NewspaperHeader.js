@@ -3,12 +3,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function NewspaperHeader() {
-  const currentDate = new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ 
@@ -18,66 +12,57 @@ export default function NewspaperHeader() {
 
   return (
     <motion.header 
-      className="border-b-4 border-black bg-white sticky top-0 z-50"
-      initial={{ y: -100 }}
+      className="border-b-2 border-black bg-white sticky top-0 z-50 shadow-sm"
+      initial={{ y: -50 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.4 }}
     >
-      {/* Top banner with date */}
-      <div className="border-b border-gray-300 py-2 px-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
-          <span className="font-mono">{currentDate}</span>
-          <span className="font-serif italic">Portfolio Edition</span>
-        </div>
-      </div>
-
-      {/* Main header */}
-      <div className="py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* Compact header */}
+      <div className="py-3 px-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          {/* Logo/Name */}
           <motion.div 
-            className="border-b border-t border-black py-3 mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex items-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            <h1 className="font-heathergreen text-5xl md:text-7xl font-bold tracking-wider">
+            <h1 className="font-heathergreen text-2xl md:text-3xl font-bold tracking-wider">
               ABDULLA FAROOQ
             </h1>
-            <p className="font-serif text-lg mt-2 text-gray-700">Full-Stack Developer</p>
+            <span className="hidden md:block font-serif text-sm text-gray-600 border-l border-gray-300 pl-4">
+              Full-Stack Developer
+            </span>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Navigation bar */}
-      <motion.div 
-        className="bg-black text-white py-3 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.4 }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <nav className="flex justify-center gap-8 text-base font-mono uppercase tracking-wider">
+          {/* Navigation */}
+          <motion.nav 
+            className="flex gap-6 text-sm font-mono uppercase tracking-wider"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="hover:underline transition-colors py-2"
+              className="hover:text-gray-600 transition-colors py-2 cursor-pointer"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('projects')} 
-              className="hover:underline transition-colors py-2"
+              className="hover:text-gray-600 transition-colors py-2 cursor-pointer"
             >
               Projects
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="hover:underline transition-colors py-2"
+              className="bg-black text-white px-4 py-2 hover:bg-gray-800 transition-colors cursor-pointer"
             >
               Contact
             </button>
-          </nav>
+          </motion.nav>
         </div>
-      </motion.div>
+      </div>
     </motion.header>
   );
 }
