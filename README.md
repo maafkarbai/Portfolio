@@ -75,7 +75,7 @@ A unique newspaper-themed portfolio website showcasing Abdulla Farooq's full-sta
 ### 1. Clone & Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/maafkarbai/portfolio.git
 cd portfolio
 
 # Run setup script (creates .env, installs deps, sets up DB)
@@ -106,14 +106,14 @@ src/app/fonts/
 ```bash
 # Update .env with your settings
 SMTP_HOST=smtp.gmail.com
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-CONTACT_EMAIL=your-email@gmail.com
+SMTP_USER=voilad8a@gmail.com
+SMTP_PASS=your-gmail-app-password
+CONTACT_EMAIL=voilad8a@gmail.com
 
 # Optional: Analytics and social links
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_GITHUB_URL=https://github.com/yourusername
-NEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/in/yourusername
+NEXT_PUBLIC_GITHUB_URL=https://github.com/maafkarbai
+NEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/in/abdullafarooq
 ```
 
 ### 4. Development
@@ -195,8 +195,8 @@ NEXTAUTH_URL=https://yourdomain.com
 
 # Email configuration
 SMTP_HOST=smtp.gmail.com
-SMTP_USER=your-production-email@gmail.com
-SMTP_PASS=your-secure-app-password
+SMTP_USER=voilad8a@gmail.com
+SMTP_PASS=your-secure-gmail-app-password
 
 # Security (generate strong secrets)
 JWT_SECRET=your-production-jwt-secret
@@ -275,7 +275,7 @@ This is a personal portfolio project, but suggestions and feedback are welcome!
 ### Development Setup
 ```bash
 # Fork and clone
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/maafkarbai/portfolio.git
 
 # Create feature branch
 git checkout -b feature/your-feature
@@ -331,9 +331,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 About
 
 **Abdulla Farooq** - Full Stack Developer  
-📧 Email: abdulla@example.com  
-💼 LinkedIn: [linkedin.com/in/abdulla-farooq](https://linkedin.com/in/abdulla-farooq)  
-🐙 GitHub: [github.com/abdulla-farooq](https://github.com/abdulla-farooq)
+📧 Email: voilad8a@gmail.com  
+📱 Phone: +97433209192  
+💼 LinkedIn: [linkedin.com/in/abdullafarooq](https://linkedin.com/in/abdullafarooq)  
+🐙 GitHub: [github.com/maafkarbai](https://github.com/maafkarbai)
 
 ---
 
@@ -341,7 +342,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This newspaper-themed portfolio stands out from typical developer portfolios and is designed to catch recruiters' attention while showcasing technical expertise through innovative design.
 
-**[🚀 View Live Demo](https://your-portfolio-url.com)** | **[📁 View Source](https://github.com/yourusername/portfolio)**
+**[🚀 View Live Demo](https://your-portfolio-url.com)** | **[📁 View Source](https://github.com/maafkarbai/portfolio)**
 
 ---
 

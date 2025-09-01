@@ -310,7 +310,7 @@ export default function ProjectsPage() {
                     <h4 className="font-bold text-sm mb-2">🚀 SIMILAR PROJECT NEEDED?</h4>
                     <div className="text-xs space-y-1">
                       <p>Get a custom quote</p>
-                      <p className="font-bold">abdulla@example.com</p>
+                      <p className="font-bold">voilad8a@gmail.com</p>
                       <p className="border-t border-red-400 pt-1 mt-2 text-xs">
                         FREE CONSULTATION
                       </p>

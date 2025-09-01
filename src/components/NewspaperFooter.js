@@ -27,10 +27,10 @@ export default function NewspaperFooter() {
           <div>
             <h4 className="font-bold mb-4 tracking-wider">CONNECT</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">GitHub Bureau</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn Office</a></li>
+              <li><a href="https://github.com/maafkarbai" className="hover:text-white transition-colors">GitHub Bureau</a></li>
+              <li><a href="https://linkedin.com/in/abdullafarooq" className="hover:text-white transition-colors">LinkedIn Office</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Twitter Wire</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Email Telegraph</a></li>
+              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors">Email Telegraph</a></li>
             </ul>
           </div>
 

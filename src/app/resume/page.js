@@ -52,12 +52,12 @@ export default function ResumePage() {
             <h1 className="font-heathergreen text-4xl font-bold mb-2">ABDULLA FAROOQ</h1>
             <h2 className="font-serif text-xl text-gray-700 mb-4">Full-Stack Web Developer</h2>
             <div className="grid md:grid-cols-3 gap-4 text-sm font-mono">
-              <div>📧 abdulla@example.com</div>
-              <div>📱 +1 (555) 123-4567</div>
+              <div>📧 voilad8a@gmail.com</div>
+              <div>📱 +97433209192</div>
               <div>🌐 abdullafarooq.dev</div>
             </div>
             <div className="grid md:grid-cols-2 gap-4 text-sm font-mono mt-2">
-              <div>💼 linkedin.com/in/abdulla-farooq</div>
+              <div>💼 linkedin.com/in/abdullafarooq</div>
               <div>🔗 github.com/abdulla-farooq</div>
             </div>
           </motion.div>
@@ -378,7 +378,7 @@ export default function ResumePage() {
               📄 DOWNLOAD PDF RESUME
             </motion.button>
             <motion.a
-              href="mailto:abdulla@example.com"
+              href="mailto:voilad8a@gmail.com"
               className="bg-green-600 text-white px-8 py-3 font-mono text-sm hover:bg-green-700 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

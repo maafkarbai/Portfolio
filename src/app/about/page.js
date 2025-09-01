@@ -173,9 +173,9 @@ export default function AboutPage() {
               >
                 <h4 className="font-bold mb-2">🎯 READY TO HIRE?</h4>
                 <div className="text-xs space-y-1">
-                  <p>📧 abdulla@example.com</p>
-                  <p>📱 +1 (555) 123-4567</p>
-                  <p>💼 linkedin.com/in/abdulla</p>
+                  <p>📧 voilad8a@gmail.com</p>
+                  <p>📱 +97433209192</p>
+                  <p>💼 linkedin.com/in/abdullafarooq</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-green-400">
                   <p className="font-bold text-xs">INTERVIEW READY!</p>

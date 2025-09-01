@@ -219,9 +219,9 @@ export default function HeroSection() {
               >
                 <h3 className="font-bold text-sm mb-2 text-center">🚀 HIRE ABDULLA NOW!</h3>
                 <div className="text-xs space-y-1 text-center">
-                  <p>📧 Email: <strong>abdulla@example.com</strong></p>
-                  <p>📱 Phone: <strong>+1 (555) 123-4567</strong></p>
-                  <p>💼 LinkedIn: <strong>/in/abdulla-farooq</strong></p>
+                  <p>📧 Email: <strong>voilad8a@gmail.com</strong></p>
+                  <p>📱 Phone: <strong>+97433209192</strong></p>
+                  <p>💼 LinkedIn: <strong>linkedin.com/in/abdullafarooq</strong></p>
                 </div>
                 <div className="mt-2 pt-2 border-t border-green-400 text-center">
                   <p className="font-bold text-xs">RESPONSE WITHIN 24 HOURS GUARANTEED</p>
