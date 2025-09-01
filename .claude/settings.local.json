@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(bun add:*)",
-      "Bash(bunx prisma:*)"
+      "Bash(bunx prisma:*)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []
