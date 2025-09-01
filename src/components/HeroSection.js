@@ -3,239 +3,174 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
+
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
+
   return (
-    <section id="about" className="bg-white py-8 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="hero" className="bg-white py-16 px-4">
+      <div className="max-w-6xl mx-auto">
         {/* Main headline with animation */}
         <motion.div 
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: -50 }}
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="font-heathergreen text-4xl md:text-6xl font-bold mb-4 leading-tight"
+            className="font-heathergreen text-5xl md:text-7xl font-bold mb-6 leading-tight"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            LOCAL DEVELOPER CREATES
+            FULL-STACK DEVELOPER
             <br />
-            EXTRAORDINARY DIGITAL EXPERIENCES
+            <span className="text-4xl md:text-5xl text-gray-700">AVAILABLE FOR HIRE</span>
           </motion.h1>
+          
           <motion.div 
-            className="border-t border-b border-black py-2 my-4"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
+            className="border-t border-b border-black py-4 my-6 max-w-3xl mx-auto"
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: "100%", opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <p className="font-serif text-lg italic">
-              Abdulla Farooq revolutionizes web development with cutting-edge solutions
+            <p className="font-serif text-xl italic">
+              Abdulla Farooq • Creating extraordinary digital experiences with modern technologies
             </p>
           </motion.div>
-          
-          {/* Recruiter CTA Banner */}
+
+          {/* CTA Buttons */}
           <motion.div 
-            className="bg-red-600 text-white py-3 px-6 mx-auto max-w-2xl border-2 border-black mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <div className="flex items-center justify-center gap-4 font-mono text-sm">
-              <span className="animate-pulse">🔥 HIRING ALERT 🔥</span>
-              <span>FULL-STACK DEVELOPER AVAILABLE FOR IMMEDIATE HIRE</span>
-              <span className="animate-pulse">🔥</span>
-            </div>
+            <motion.button 
+              onClick={scrollToContact}
+              className="bg-black text-white px-8 py-4 text-lg font-mono tracking-wider hover:bg-gray-800 transition-all duration-300 border-2 border-black"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              🚀 HIRE ME NOW
+            </motion.button>
+            
+            <motion.button 
+              onClick={scrollToProjects}
+              className="border-2 border-black px-8 py-4 text-lg font-mono tracking-wider hover:bg-black hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              VIEW PROJECTS
+            </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Three-column newspaper layout */}
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
-          {/* Left column - About with Profile Image */}
-          <motion.div 
-            className="border-r border-gray-300 pr-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <h2 className="font-heathergreen text-2xl font-bold mb-4 border-b border-black pb-2">
-              ABOUT THE DEVELOPER
-            </h2>
+        {/* About section */}
+        <motion.div 
+          className="grid md:grid-cols-2 gap-12 mt-16 items-center"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          {/* Profile Image */}
+          <div className="order-2 md:order-1">
+            <motion.div 
+              className="border-4 border-black p-4 bg-gray-50"
+              whileHover={{ rotate: 1, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Image
+                src="/Abdulla Image.jpeg"
+                alt="Abdulla Farooq - Full Stack Developer"
+                width={400}
+                height={500}
+                className="w-full h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="text-center py-3 bg-white border-t-2 border-gray-300">
+                <p className="font-serif text-sm italic">
+                  Abdulla Farooq - Digital craftsman at work
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* About Content */}
+          <div className="order-1 md:order-2">
+            <motion.h2 
+              className="font-heathergreen text-4xl font-bold mb-6 border-b-2 border-black pb-3"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              MEET THE DEVELOPER
+            </motion.h2>
             
-            {/* Profile Image with newspaper style */}
-            <div className="mb-6">
-              <div className="border-2 border-black p-2 bg-gray-100">
-                <Image
-                  src="/Abdulla Image.jpeg"
-                  alt="Abdulla Farooq - Full Stack Developer"
-                  width={280}
-                  height={320}
-                  className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
-                <div className="text-center py-2 bg-white border-t border-gray-300">
-                  <p className="font-serif text-xs italic">
-                    Abdulla Farooq at work in his digital newsroom
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="font-serif text-sm leading-relaxed space-y-3">
-              <p className="first-letter:text-4xl first-letter:font-bold first-letter:mr-1 first-letter:float-left">
-                Abdulla Farooq, a prominent figure in the digital development scene, 
-                has been making waves with innovative web applications and user experiences 
-                that set new industry standards.
-              </p>
-              <p>
-                With expertise spanning modern frameworks and technologies, Farooq continues 
-                to push boundaries in full-stack development, creating solutions that combine 
-                technical excellence with exceptional design.
+            <motion.div 
+              className="font-serif text-lg leading-relaxed space-y-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+            >
+              <p className="first-letter:text-5xl first-letter:font-bold first-letter:mr-2 first-letter:float-left">
+                Passionate full-stack developer with 5+ years of experience creating 
+                innovative web applications. Specializing in React, Next.js, and Node.js 
+                to deliver exceptional digital experiences.
               </p>
               
-              {/* Recruiter-focused highlights */}
-              <div className="mt-4 p-3 bg-yellow-50 border-2 border-black">
-                <h3 className="font-bold text-sm mb-2">🎯 FOR HIRING MANAGERS:</h3>
-                <ul className="text-xs space-y-1">
-                  <li>✓ Available for immediate start</li>
-                  <li>✓ Remote/Hybrid work ready</li>
-                  <li>✓ 5+ years experience</li>
-                  <li>✓ Portfolio of 50+ projects</li>
-                </ul>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="bg-gray-100 p-4 border-2 border-black">
+                  <h3 className="font-bold mb-2">Frontend</h3>
+                  <p className="text-sm">React • Next.js • TypeScript</p>
+                </div>
+                <div className="bg-gray-100 p-4 border-2 border-black">
+                  <h3 className="font-bold mb-2">Backend</h3>
+                  <p className="text-sm">Node.js • Prisma • PostgreSQL</p>
+                </div>
               </div>
-              
-              <div className="mt-4 p-3 bg-gray-100 border-l-4 border-black">
-                <p className="text-xs italic">
-                  &ldquo;Innovation happens at the intersection of technology and creativity&rdquo; - A. Farooq
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Center column - Skills */}
-          <motion.div 
-            className="border-r border-gray-300 pr-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+        {/* Social Links */}
+        <motion.div 
+          className="flex justify-center gap-6 mt-12 pt-8 border-t border-gray-300"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.6, duration: 0.6 }}
+        >
+          <motion.a 
+            href="https://github.com/maafkarbai" 
+            target="_blank"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            whileHover={{ y: -2 }}
           >
-            <h2 className="font-heathergreen text-2xl font-bold mb-4 border-b border-black pb-2">
-              TECHNICAL EXPERTISE
-            </h2>
-            <div className="font-serif text-sm space-y-4">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-              >
-                <h3 className="font-bold text-base mb-2">Frontend Technologies</h3>
-                <p className="leading-relaxed">
-                  React, Next.js, JavaScript, TypeScript, Tailwind CSS, and modern 
-                  animation libraries deliver exceptional user experiences.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9 }}
-              >
-                <h3 className="font-bold text-base mb-2">Backend Systems</h3>
-                <p className="leading-relaxed">
-                  Node.js, Prisma, PostgreSQL, and API development ensure robust 
-                  and scalable server-side solutions.
-                </p>
-              </motion.div>
-
-              {/* Enhanced recruiter info */}
-              <motion.div 
-                className="bg-blue-50 p-3 border-2 border-black"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 1.1 }}
-              >
-                <h4 className="font-bold text-sm mb-2">📊 CURRENT AVAILABILITY:</h4>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>💼 Status: <strong>Open to offers</strong></div>
-                  <div>🏠 Location: <strong>Remote/Hybrid</strong></div>
-                  <div>⏰ Notice: <strong>2 weeks</strong></div>
-                  <div>💰 Rate: <strong>Competitive</strong></div>
-                </div>
-              </motion.div>
-
-              <div className="bg-gray-50 p-3 border border-gray-300">
-                <h4 className="font-bold text-sm mb-1">BREAKING:</h4>
-                <p className="text-xs">
-                  New project deployment increases client satisfaction by 300%
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right column - Latest news */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            GitHub
+          </motion.a>
+          <motion.a 
+            href="https://linkedin.com/in/abdullafarooq" 
+            target="_blank"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            whileHover={{ y: -2 }}
           >
-            <h2 className="font-heathergreen text-2xl font-bold mb-4 border-b border-black pb-2">
-              LATEST PROJECTS
-            </h2>
-            <div className="font-serif text-sm space-y-4">
-              <motion.article 
-                className="border-b border-gray-200 pb-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9 }}
-              >
-                <h3 className="font-bold text-base mb-1">Portfolio Website Launch</h3>
-                <p className="text-xs text-gray-600 mb-2">Published Today</p>
-                <p className="leading-relaxed">
-                  Revolutionary newspaper-themed portfolio showcases creative approach 
-                  to developer presentation and user engagement.
-                </p>
-              </motion.article>
-
-              <motion.article 
-                className="border-b border-gray-200 pb-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.1 }}
-              >
-                <h3 className="font-bold text-base mb-1">E-commerce Platform</h3>
-                <p className="text-xs text-gray-600 mb-2">Last Week</p>
-                <p className="leading-relaxed">
-                  Full-stack solution increases client sales by implementing 
-                  advanced payment processing and inventory management.
-                </p>
-              </motion.article>
-
-              {/* Recruiter-focused CTA */}
-              <motion.div 
-                className="bg-green-600 text-white p-4 border-2 border-black"
-                initial={{ scale: 0.8, rotate: -2 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 1.3, type: "spring" }}
-                whileHover={{ scale: 1.05, rotate: 1 }}
-              >
-                <h3 className="font-bold text-sm mb-2 text-center">🚀 HIRE ABDULLA NOW!</h3>
-                <div className="text-xs space-y-1 text-center">
-                  <p>📧 Email: <strong>voilad8a@gmail.com</strong></p>
-                  <p>📱 Phone: <strong>+97433209192</strong></p>
-                  <p>💼 LinkedIn: <strong>linkedin.com/in/abdullafarooq</strong></p>
-                </div>
-                <div className="mt-2 pt-2 border-t border-green-400 text-center">
-                  <p className="font-bold text-xs">RESPONSE WITHIN 24 HOURS GUARANTEED</p>
-                </div>
-              </motion.div>
-
-              <div className="bg-black text-white p-3 text-center">
-                <p className="font-bold text-xs tracking-wider">
-                  MORE PROJECTS ON PAGE 2
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            LinkedIn
+          </motion.a>
+          <motion.a 
+            href="mailto:voilad8a@gmail.com"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors"
+            whileHover={{ y: -2 }}
+          >
+            Email
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

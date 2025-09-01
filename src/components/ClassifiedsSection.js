@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ClassifiedsSection() {
   const [formData, setFormData] = useState({
@@ -42,160 +43,160 @@ export default function ClassifiedsSection() {
   };
 
   return (
-    <section id="contact" className="bg-white py-12 px-4 border-t-4 border-black">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="bg-white py-16 px-4 border-t-4 border-black">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="border-b border-t border-black py-4 mb-6">
             <h2 className="font-heathergreen text-5xl font-bold tracking-wider">
-              CLASSIFIED ADVERTISEMENTS
+              GET IN TOUCH
             </h2>
-            <p className="font-serif italic mt-2">Professional Services • Contact Information</p>
+            <p className="font-serif italic mt-2 text-lg">Ready to work together?</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Sample classified ads */}
-          <div className="space-y-6">
-            <div className="border-2 border-black p-4">
-              <div className="bg-black text-white p-2 text-center mb-3">
-                <p className="font-bold text-sm">SERVICES OFFERED</p>
-              </div>
-              <div className="font-serif text-sm space-y-2">
-                <p className="font-bold">WEB DEVELOPMENT</p>
-                <p>Custom websites, e-commerce platforms, web applications. Modern frameworks, responsive design, SEO optimization.</p>
-                <p className="text-xs">Call for consultation</p>
-              </div>
-            </div>
-
-            <div className="border border-gray-400 p-4">
-              <div className="font-serif text-sm space-y-2">
-                <p className="font-bold">FULL-STACK SOLUTIONS</p>
-                <p>Database design, API development, server configuration, deployment services.</p>
-                <p className="text-xs italic">Competitive rates available</p>
-              </div>
-            </div>
-
-            <div className="border-2 border-black p-4">
-              <div className="bg-gray-100 p-2 text-center mb-3">
-                <p className="font-bold text-sm">FREELANCE AVAILABLE</p>
-              </div>
-              <div className="font-serif text-sm space-y-2">
-                <p>Experienced developer seeking new projects. React, Next.js, Node.js specialist.</p>
-                <p className="text-xs">Portfolio references upon request</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Main contact form */}
-          <div className="md:col-span-2">
-            <div className="border-4 border-black p-8 bg-gray-50">
-              <div className="text-center mb-6">
-                <h3 className="font-heathergreen text-3xl font-bold mb-2">
-                  PLACE YOUR MESSAGE
-                </h3>
-                <p className="font-serif text-sm italic">
-                  Professional inquiries welcome • Quick response guaranteed
+        {/* Contact form */}
+        <motion.div 
+          className="bg-gray-50 border-4 border-black p-8"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {submitted ? (
+            <motion.div 
+              className="text-center py-12"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="border-4 border-black p-8 bg-white">
+                <h4 className="font-heathergreen text-3xl font-bold mb-4">
+                  MESSAGE SENT! ✓
+                </h4>
+                <p className="font-serif text-lg">
+                  Thank you for reaching out. I'll get back to you within 24 hours.
                 </p>
               </div>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <label className="block font-serif font-bold text-lg mb-3">
+                    YOUR NAME*
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-2 border-black p-4 font-mono text-base focus:outline-none focus:ring-4 focus:ring-gray-200 transition-all"
+                    placeholder="John Doe"
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <label className="block font-serif font-bold text-lg mb-3">
+                    YOUR EMAIL*
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-2 border-black p-4 font-mono text-base focus:outline-none focus:ring-4 focus:ring-gray-200 transition-all"
+                    placeholder="john@example.com"
+                  />
+                </motion.div>
+              </div>
 
-              {submitted ? (
-                <div className="text-center py-8">
-                  <div className="border-4 border-black p-6 bg-white">
-                    <h4 className="font-heathergreen text-2xl font-bold mb-2">
-                      MESSAGE RECEIVED!
-                    </h4>
-                    <p className="font-serif">
-                      Your classified ad has been submitted to The Farooq Times editorial desk. 
-                      Response within 24 hours guaranteed.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block font-serif font-bold text-sm mb-2">
-                        ADVERTISER NAME*
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full border-2 border-black p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
-                        placeholder="Your Name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block font-serif font-bold text-sm mb-2">
-                        CONTACT TELEGRAPH*
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full border-2 border-black p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
-                        placeholder="your.email@address.com"
-                      />
-                    </div>
-                  </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <label className="block font-serif font-bold text-lg mb-3">
+                  YOUR MESSAGE*
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={8}
+                  className="w-full border-2 border-black p-4 font-serif text-base focus:outline-none focus:ring-4 focus:ring-gray-200 resize-none transition-all"
+                  placeholder="Tell me about your project, timeline, and requirements..."
+                />
+              </motion.div>
 
-                  <div>
-                    <label className="block font-serif font-bold text-sm mb-2">
-                      ADVERTISEMENT CONTENT*
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full border-2 border-black p-3 font-serif text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 resize-none"
-                      placeholder="Compose your professional inquiry here. Include project details, timeline, and requirements..."
-                    />
-                  </div>
+              <motion.div 
+                className="text-center pt-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-black text-white px-12 py-4 text-lg font-mono tracking-wider hover:bg-gray-800 disabled:opacity-50 transition-colors border-2 border-black"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {isSubmitting ? 'SENDING MESSAGE...' : 'SEND MESSAGE'}
+                </motion.button>
+              </motion.div>
+            </form>
+          )}
+        </motion.div>
 
-                  <div className="text-center pt-4">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="bg-black text-white px-8 py-3 font-mono text-sm tracking-wider hover:bg-gray-800 disabled:opacity-50 transition-colors"
-                    >
-                      {isSubmitting ? 'SUBMITTING TO PRESS...' : 'SUBMIT CLASSIFIED AD'}
-                    </button>
-                  </div>
-
-                  <div className="text-center text-xs font-serif text-gray-600 mt-4">
-                    <p>* All fields required • Responses typically within 24 hours</p>
-                    <p>The Farooq Times reserves the right to edit submissions for clarity</p>
-                  </div>
-                </form>
-              )}
+        {/* Direct contact info */}
+        <motion.div 
+          className="mt-12 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="border-t border-black pt-8">
+            <h3 className="font-bold text-xl mb-6">OR REACH OUT DIRECTLY:</h3>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 text-lg">
+              <motion.a 
+                href="mailto:voilad8a@gmail.com" 
+                className="font-mono hover:underline"
+                whileHover={{ scale: 1.05 }}
+              >
+                📧 voilad8a@gmail.com
+              </motion.a>
+              <motion.a 
+                href="tel:+97433209192" 
+                className="font-mono hover:underline"
+                whileHover={{ scale: 1.05 }}
+              >
+                📱 +974 3320 9192
+              </motion.a>
             </div>
           </div>
-        </div>
-
-        {/* Contact info footer */}
-        <div className="mt-12 border-t border-black pt-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h4 className="font-bold mb-2">EDITORIAL OFFICE</h4>
-              <p className="font-serif text-sm">Available for freelance projects</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-2">CIRCULATION DEPT</h4>
-              <p className="font-serif text-sm">Follow on GitHub & LinkedIn</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-2">ADVERTISING RATES</h4>
-              <p className="font-serif text-sm">Competitive pricing • Quality guaranteed</p>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
