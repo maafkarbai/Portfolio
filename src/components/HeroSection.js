@@ -105,7 +105,7 @@ export default function HeroSection() {
               
               <div className="mt-4 p-3 bg-gray-100 border-l-4 border-black">
                 <p className="text-xs italic">
-                  "Innovation happens at the intersection of technology and creativity" - A. Farooq
+                  &ldquo;Innovation happens at the intersection of technology and creativity&rdquo; - A. Farooq
                 </p>
               </div>
             </div>

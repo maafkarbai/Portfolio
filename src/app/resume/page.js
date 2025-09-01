@@ -167,7 +167,7 @@ export default function ResumePage() {
                       <span className="text-sm font-mono bg-gray-100 px-2 py-1">2016 - 2020</span>
                     </div>
                     <p className="font-serif text-sm">
-                      Graduated Magna Cum Laude • GPA: 3.8/4.0 • Dean's List: 6 semesters
+                      Graduated Magna Cum Laude • GPA: 3.8/4.0 • Dean&rsquo;s List: 6 semesters
                     </p>
                   </div>
 

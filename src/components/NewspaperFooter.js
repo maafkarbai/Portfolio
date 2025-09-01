@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function NewspaperFooter() {
   const currentYear = new Date().getFullYear();
 
@@ -17,10 +19,10 @@ export default function NewspaperFooter() {
           <div>
             <h4 className="font-bold mb-4 tracking-wider">DEPARTMENTS</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><a href="/about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="/projects" className="hover:text-white transition-colors">Projects</a></li>
-              <li><a href="/resume" className="hover:text-white transition-colors">Resume</a></li>
-              <li><a href="/#contact" className="hover:text-white transition-colors">Classifieds</a></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/resume" className="hover:text-white transition-colors">Resume</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors">Classifieds</Link></li>
             </ul>
           </div>
 
@@ -66,7 +68,7 @@ export default function NewspaperFooter() {
         {/* Final tagline */}
         <div className="text-center mt-6 pt-4 border-t border-gray-800">
           <p className="font-heathergreen text-lg italic">
-            "All The Code That's Fit To Print"
+&ldquo;All The Code That&rsquo;s Fit To Print&rdquo;
           </p>
         </div>
       </div>

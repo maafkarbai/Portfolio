@@ -3,7 +3,8 @@
     "allow": [
       "Bash(bun add:*)",
       "Bash(bunx prisma:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(bun run:*)"
     ],
     "deny": [],
     "ask": []

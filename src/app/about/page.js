@@ -42,7 +42,7 @@ export default function AboutPage() {
               </div>
 
               <h2 className="font-heathergreen text-3xl font-bold mb-4">
-                "Code is Poetry in Motion"
+                &ldquo;Code is Poetry in Motion&rdquo;
               </h2>
               <h3 className="font-serif text-lg italic mb-6 text-gray-700">
                 Local Developer Shares Journey from Student to Industry Leader
@@ -57,10 +57,10 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  "I started coding in 2018," Farooq recalls, adjusting his workspace 
-                  filled with multiple monitors and coffee cups. "What began as curiosity 
+                  &ldquo;I started coding in 2018,&rdquo; Farooq recalls, adjusting his workspace 
+                  filled with multiple monitors and coffee cups. &ldquo;What began as curiosity 
                   about how websites worked has evolved into a passion for creating 
-                  digital experiences that solve real-world problems."
+                  digital experiences that solve real-world problems.&rdquo;
                 </p>
 
                 <div className="bg-gray-100 p-4 border-l-4 border-black my-6">
@@ -86,9 +86,9 @@ export default function AboutPage() {
                 </div>
 
                 <p>
-                  His approach to development is methodical yet creative. "Every project 
-                  starts with understanding the client's vision," he explains. "Technology 
-                  should serve the user experience, not dominate it."
+                  His approach to development is methodical yet creative. &ldquo;Every project 
+                  starts with understanding the client&rsquo;s vision,&rdquo; he explains. &ldquo;Technology 
+                  should serve the user experience, not dominate it.&rdquo;
                 </p>
 
                 <p>
@@ -126,10 +126,10 @@ export default function AboutPage() {
                 </div>
 
                 <p>
-                  When asked about his availability for new opportunities, Farooq's 
-                  eyes light up. "I'm always excited about challenging projects. 
-                  Whether it's a startup needing an MVP or an enterprise requiring 
-                  scalable solutions, I bring the same enthusiasm and expertise."
+                  When asked about his availability for new opportunities, Farooq&rsquo;s 
+                  eyes light up. &ldquo;I&rsquo;m always excited about challenging projects. 
+                  Whether it&rsquo;s a startup needing an MVP or an enterprise requiring 
+                  scalable solutions, I bring the same enthusiasm and expertise.&rdquo;
                 </p>
               </div>
             </div>
@@ -186,9 +186,9 @@ export default function AboutPage() {
               <div className="border border-gray-400 p-3">
                 <h5 className="font-bold mb-2 text-center">CLIENT REVIEW</h5>
                 <p className="text-xs font-serif italic text-center mb-2">
-                  "Abdulla delivered our e-commerce platform ahead of schedule 
+                  &ldquo;Abdulla delivered our e-commerce platform ahead of schedule 
                   and exceeded all expectations. His attention to detail and 
-                  problem-solving skills are exceptional."
+                  problem-solving skills are exceptional.&rdquo;
                 </p>
                 <p className="text-xs text-center">- Sarah Johnson, CEO TechStart</p>
                 <div className="text-center mt-1">

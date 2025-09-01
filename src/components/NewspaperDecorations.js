@@ -1,7 +1,7 @@
 export function WeatherWidget() {
   return (
     <div className="border border-black p-2 bg-gray-100 text-xs font-serif">
-      <h4 className="font-bold mb-1">TODAY'S FORECAST</h4>
+      <h4 className="font-bold mb-1">TODAY&rsquo;S FORECAST</h4>
       <div className="flex justify-between">
         <span>Development: Sunny ☀️</span>
         <span>82°F</span>
@@ -84,7 +84,7 @@ export function NewspaperAd({ title, content, price }) {
 export function CrosswordTeaser() {
   return (
     <div className="border-2 border-black p-4 bg-white">
-      <h4 className="font-bold text-center mb-3">TODAY'S PUZZLE</h4>
+      <h4 className="font-bold text-center mb-3">TODAY&rsquo;S PUZZLE</h4>
       <div className="grid grid-cols-5 gap-px bg-black">
         {Array.from({ length: 25 }).map((_, i) => (
           <div key={i} className={`w-6 h-6 ${Math.random() > 0.3 ? 'bg-white' : 'bg-black'}`}>

@@ -323,7 +323,7 @@ export default function ProjectsPage() {
                     <div className="text-center">
                       <span className="text-yellow-500 text-lg">★★★★★</span>
                       <p className="text-xs font-serif italic mt-1">
-                        "Exceptional quality and timely delivery"
+                        &ldquo;Exceptional quality and timely delivery&rdquo;
                       </p>
                     </div>
                   </div>

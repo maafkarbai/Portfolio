@@ -127,7 +127,7 @@ export default function ProjectsSection() {
 
                   <div className="border border-gray-300 p-3 text-center">
                     <p className="text-xs font-serif italic">
-                      "Another exceptional delivery from Farooq"
+                      &ldquo;Another exceptional delivery from Farooq&rdquo;
                     </p>
                     <p className="text-xs mt-1">- Client Review</p>
                   </div>
