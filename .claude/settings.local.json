@@ -4,7 +4,8 @@
       "Bash(bun add:*)",
       "Bash(bunx prisma:*)",
       "Bash(chmod:*)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
