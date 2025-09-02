@@ -1,68 +1,61 @@
-'use client';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function NewspaperHeader() {
-
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ 
-      behavior: 'smooth' 
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
     });
   };
 
   return (
-    <motion.header 
-      className="border-b-2 border-black bg-white sticky top-0 z-50 shadow-sm"
+    <motion.header
+      className="sticky top-0 z-50 bg-white border-b-2 border-black shadow-sm"
       initial={{ y: -50 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.4 }}
     >
       {/* Compact header */}
-      <div className="py-3 px-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="px-4 py-3">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
           {/* Logo/Name */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <h1 className="font-heathergreen text-2xl md:text-3xl font-bold tracking-wider">
+            <h1 className="text-2xl font-bold tracking-wider font-heathergreen md:text-3xl">
               ABDULLA FAROOQ
             </h1>
-            <span className="hidden md:block font-serif text-sm text-gray-600 border-l border-gray-300 pl-4">
+            <span className="hidden pl-4 font-serif text-sm text-gray-600 border-l border-gray-300 md:block">
               Full-Stack Developer
             </span>
           </motion.div>
 
           {/* Navigation */}
-          <motion.nav 
-            className="flex gap-4 text-sm font-mono uppercase tracking-wider"
+          <motion.nav
+            className="flex gap-6 font-mono text-sm tracking-wider uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <button 
-              onClick={() => scrollToSection('hero')} 
-              className="hover:text-gray-600 transition-colors py-2 cursor-pointer"
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="py-2 transition-colors cursor-pointer hover:text-gray-600"
             >
               About
             </button>
-            <button 
-              onClick={() => scrollToSection('projects')} 
-              className="hover:text-gray-600 transition-colors py-2 cursor-pointer"
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="py-2 transition-colors cursor-pointer hover:text-gray-600"
             >
               Projects
             </button>
-            <button 
-              onClick={() => scrollToSection('hire-me')} 
-              className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 transition-colors cursor-pointer"
-            >
-              Hire Me
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')} 
-              className="bg-black text-white px-4 py-2 hover:bg-gray-800 transition-colors cursor-pointer"
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="px-4 py-2 text-white transition-colors bg-black cursor-pointer hover:bg-gray-800"
             >
               Contact
             </button>
