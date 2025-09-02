@@ -35,9 +35,9 @@ export default function HeroSection() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            FULL-STACK DEVELOPER
+            🚀 FULL-STACK DEVELOPER
             <br />
-            <span className="text-4xl md:text-5xl text-gray-700">AVAILABLE FOR HIRE</span>
+            <span className="text-4xl md:text-5xl text-gray-700">💼 AVAILABLE FOR HIRE</span>
           </motion.h1>
           
           <motion.div 
@@ -47,7 +47,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <p className="font-serif text-xl italic">
-              Abdulla Farooq • Creating extraordinary digital experiences with modern technologies
+              👨‍💻 Abdulla Farooq • Creating extraordinary digital experiences with modern technologies ✨
             </p>
           </motion.div>
 
@@ -73,7 +73,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              VIEW PROJECTS
+              📁 VIEW PROJECTS
             </motion.button>
           </motion.div>
         </motion.div>
@@ -116,7 +116,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              MEET THE DEVELOPER
+              👋 MEET THE DEVELOPER
             </motion.h2>
             
             <motion.div 
@@ -133,11 +133,11 @@ export default function HeroSection() {
               
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-gray-100 p-4 border-2 border-black">
-                  <h3 className="font-bold mb-2">Frontend</h3>
+                  <h3 className="font-bold mb-2">🎨 Frontend</h3>
                   <p className="text-sm">React • Next.js • TypeScript</p>
                 </div>
                 <div className="bg-gray-100 p-4 border-2 border-black">
-                  <h3 className="font-bold mb-2">Backend</h3>
+                  <h3 className="font-bold mb-2">⚙️ Backend</h3>
                   <p className="text-sm">Node.js • Prisma • PostgreSQL</p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
-            GitHub
+            💻 GitHub
           </motion.a>
           <motion.a 
             href="https://linkedin.com/in/abdullafarooq" 
@@ -166,14 +166,14 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
-            LinkedIn
+            💼 LinkedIn
           </motion.a>
           <motion.a 
             href="mailto:voilad8a@gmail.com"
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
             whileHover={{ y: -2 }}
           >
-            Email
+            📧 Email
           </motion.a>
         </motion.div>
       </div>

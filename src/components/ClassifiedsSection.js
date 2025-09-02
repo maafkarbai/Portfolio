@@ -144,7 +144,7 @@ export default function ClassifiedsSection() {
                   MESSAGE SENT! ✓
                 </h4>
                 <p className="font-serif text-lg">
-                  Thank you for reaching out. I'll get back to you within 24 hours.
+                  Thank you for reaching out. I&apos;ll get back to you within 24 hours.
                 </p>
               </div>
             </motion.div>

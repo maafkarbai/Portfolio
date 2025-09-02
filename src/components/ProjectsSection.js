@@ -141,7 +141,7 @@ export default function ProjectsSection() {
             <h3 className="font-heathergreen text-3xl font-bold mb-4">
               INTERESTED IN MY WORK?
             </h3>
-            <p className="font-serif text-lg mb-6">Let's discuss your next project</p>
+            <p className="font-serif text-lg mb-6">Let&apos;s discuss your next project</p>
             <motion.button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-black px-8 py-3 font-mono tracking-wider hover:bg-gray-100 transition-colors border-2 border-white cursor-pointer"

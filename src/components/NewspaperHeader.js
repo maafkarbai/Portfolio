@@ -37,7 +37,7 @@ export default function NewspaperHeader() {
 
           {/* Navigation */}
           <motion.nav 
-            className="flex gap-6 text-sm font-mono uppercase tracking-wider"
+            className="flex gap-4 text-sm font-mono uppercase tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -53,6 +53,12 @@ export default function NewspaperHeader() {
               className="hover:text-gray-600 transition-colors py-2 cursor-pointer"
             >
               Projects
+            </button>
+            <button 
+              onClick={() => scrollToSection('hire-me')} 
+              className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 transition-colors cursor-pointer"
+            >
+              Hire Me
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 

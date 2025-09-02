@@ -2,6 +2,7 @@ import NewspaperHeader from "@/components/NewspaperHeader";
 import NewspaperLayout from "@/components/NewspaperLayout";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import HireMeSection from "@/components/HireMeSection";
 import ClassifiedsSection from "@/components/ClassifiedsSection";
 import NewspaperFooter from "@/components/NewspaperFooter";
 import { BreakingNews } from "@/components/NewspaperDecorations";
@@ -14,6 +15,7 @@ export default function Home() {
       <NewspaperLayout>
         <HeroSection />
         <ProjectsSection />
+        <HireMeSection />
         <ClassifiedsSection />
       </NewspaperLayout>
       <NewspaperFooter />

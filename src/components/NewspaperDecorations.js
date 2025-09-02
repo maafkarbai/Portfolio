@@ -1,28 +1,28 @@
 export function WeatherWidget() {
   return (
-    <div className="border border-black p-2 bg-gray-100 text-xs font-serif">
-      <h4 className="font-bold mb-1">TODAY&rsquo;S FORECAST</h4>
+    <div className="p-2 font-serif text-xs bg-gray-100 border border-black">
+      <h4 className="mb-1 font-bold">TODAY&rsquo;S FORECAST</h4>
       <div className="flex justify-between">
         <span>Development: Sunny ☀️</span>
         <span>82°F</span>
       </div>
-      <p className="text-xs mt-1">Perfect coding weather ahead</p>
+      <p className="mt-1 text-xs">Perfect coding weather ahead</p>
     </div>
   );
 }
 
 export function StockTicker() {
   const stocks = [
-    { symbol: 'REACT', price: '19.1.0', change: '+0.2' },
-    { symbol: 'NEXT', price: '15.5.2', change: '+1.3' },
-    { symbol: 'NODE', price: '22.0.0', change: '+0.8' },
+    { symbol: "REACT", price: "19.1.0", change: "+0.2" },
+    { symbol: "NEXT", price: "15.5.2", change: "+1.3" },
+    { symbol: "NODE", price: "22.0.0", change: "+0.8" },
   ];
 
   return (
-    <div className="bg-black text-white p-2 overflow-hidden">
+    <div className="p-2 overflow-hidden text-white bg-black">
       <div className="flex animate-scroll">
         <span className="font-mono text-xs whitespace-nowrap">
-          📈 TECH STACK PRICES: {' '}
+          📈 TECH STACK PRICES:{" "}
           {stocks.map((stock, i) => (
             <span key={i} className="mr-8">
               {stock.symbol} {stock.price} ({stock.change})
@@ -36,15 +36,15 @@ export function StockTicker() {
 
 export function Advertisement() {
   return (
-    <div className="border-2 border-black p-4 bg-white text-center">
-      <h3 className="font-heathergreen text-lg font-bold mb-2">
+    <div className="p-4 text-center bg-white border-2 border-black">
+      <h3 className="mb-2 text-lg font-bold font-heathergreen">
         HIRE A DEVELOPER
       </h3>
-      <p className="font-serif text-sm mb-2">
+      <p className="mb-2 font-serif text-sm">
         Quality web solutions at competitive rates
       </p>
-      <div className="border border-gray-400 p-2">
-        <p className="text-xs font-mono">
+      <div className="p-2 border border-gray-400">
+        <p className="font-mono text-xs">
           EXPERIENCED • RELIABLE • RESULTS-DRIVEN
         </p>
       </div>
@@ -54,9 +54,9 @@ export function Advertisement() {
 
 export function BreakingNews({ message }) {
   return (
-    <div className="bg-red-600 text-white py-2 px-4">
+    <div className="px-4 py-2 text-white bg-red-600">
       <div className="flex items-center justify-center">
-        <span className="font-bold mr-4 animate-pulse">🚨 BREAKING:</span>
+        <span className="mr-4 font-bold animate-pulse">🚨 BREAKING:</span>
         <span className="font-serif text-sm">
           {message || "New portfolio project deployed successfully!"}
         </span>
@@ -67,12 +67,12 @@ export function BreakingNews({ message }) {
 
 export function NewspaperAd({ title, content, price }) {
   return (
-    <div className="border border-gray-400 p-3 bg-gray-50">
-      <h4 className="font-bold text-sm mb-2">{title}</h4>
-      <p className="font-serif text-xs leading-relaxed mb-2">{content}</p>
+    <div className="p-3 border border-gray-400 bg-gray-50">
+      <h4 className="mb-2 text-sm font-bold">{title}</h4>
+      <p className="mb-2 font-serif text-xs leading-relaxed">{content}</p>
       {price && (
         <div className="text-center">
-          <span className="bg-black text-white px-2 py-1 text-xs font-mono">
+          <span className="px-2 py-1 font-mono text-xs text-white bg-black">
             {price}
           </span>
         </div>
@@ -83,11 +83,16 @@ export function NewspaperAd({ title, content, price }) {
 
 export function CrosswordTeaser() {
   return (
-    <div className="border-2 border-black p-4 bg-white">
-      <h4 className="font-bold text-center mb-3">TODAY&rsquo;S PUZZLE</h4>
+    <div className="p-4 bg-white border-2 border-black">
+      <h4 className="mb-3 font-bold text-center">TODAY&rsquo;S PUZZLE</h4>
       <div className="grid grid-cols-5 gap-px bg-black">
         {Array.from({ length: 25 }).map((_, i) => (
-          <div key={i} className={`w-6 h-6 ${Math.random() > 0.3 ? 'bg-white' : 'bg-black'}`}>
+          <div
+            key={i}
+            className={`w-6 h-6 ${
+              Math.random() > 0.3 ? "bg-white" : "bg-black"
+            }`}
+          >
             {Math.random() > 0.7 && (
               <span className="text-xs font-mono p-0.5">
                 {String.fromCharCode(65 + Math.floor(Math.random() * 26))}
@@ -96,7 +101,7 @@ export function CrosswordTeaser() {
           </div>
         ))}
       </div>
-      <p className="text-xs font-serif mt-2 text-center">
+      <p className="mt-2 font-serif text-xs text-center">
         1 Across: Framework for React (4)
       </p>
     </div>

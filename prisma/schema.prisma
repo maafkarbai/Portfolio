@@ -36,3 +36,39 @@ model Project {
   
   @@map("projects")
 }
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  basePrice   Float    // USD price
+  category    String   // 'tech-support' or 'fullstack'
+  duration    String?  // estimated delivery time
+  features    String   // JSON string of features array
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  
+  bookings    Booking[]
+  
+  @@map("services")
+}
+
+model Booking {
+  id          Int      @id @default(autoincrement())
+  serviceId   Int
+  name        String
+  email       String
+  phone       String?
+  description String   // project requirements
+  budget      String?  // client's budget range
+  timeline    String?  // preferred timeline
+  currency    String   @default("USD")
+  localPrice  Float?   // price in client's currency
+  status      String   @default("pending") // pending, confirmed, in-progress, completed, cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  service     Service  @relation(fields: [serviceId], references: [id])
+  
+  @@map("bookings")
+}
