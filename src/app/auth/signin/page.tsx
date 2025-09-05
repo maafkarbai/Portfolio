@@ -40,11 +40,12 @@ export default function SignIn() {
         <div className="text-center">
           <div className="mx-auto h-16 w-16 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image
-              src="/logo-blue-white-bg.png"
+              src="/Logo.svg"
               alt="Techlogies"
               width={48}
               height={48}
               className="rounded-lg"
+              unoptimized
             />
           </div>
           <h2 className="mt-8 text-center text-3xl font-bold text-gray-900 tracking-tight">
@@ -144,6 +145,7 @@ export default function SignIn() {
               </Button>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </div>
