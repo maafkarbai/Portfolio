@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
+<<<<<<< HEAD
       "Bash(bun add:*)"
+=======
+      "Bash(bun add:*)",
+      "Bash(bun:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)"
+>>>>>>> a1c1ad17d9d5296fcc9cb1cbf9398a0ee3f38d91
     ],
     "deny": [],
     "ask": []

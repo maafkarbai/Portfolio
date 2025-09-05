@@ -24,10 +24,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#4A90E2" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased custom-scrollbar`}
       >
-        {children}
+        {/* Skip to content link for screen readers */}
+        <a 
+          href="#main-content" 
+          className="skip-to-content"
+          aria-label="Skip to main content"
+        >
+          Skip to main content
+        </a>
+        
+        <div id="root">
+          <main id="main-content" role="main" aria-label="Main content">
+            {children}
+          </main>
+        </div>
+        
+        {/* Live region for dynamic content announcements */}
+        <div 
+          aria-live="polite" 
+          aria-atomic="true" 
+          className="sr-only"
+          id="live-region"
+        ></div>
       </body>
     </html>
   );
