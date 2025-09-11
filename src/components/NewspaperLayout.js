@@ -16,12 +16,20 @@ export default function NewspaperLayout({ children }) {
       <div className="px-4 py-8 mx-auto max-w-8xl">
         <div className="grid grid-cols-12 gap-6">
           {/* Left sidebar */}
-          <aside className="col-span-12 space-y-6 lg:col-span-2">
+          <aside 
+            className="col-span-12 space-y-6 lg:col-span-2"
+            role="complementary"
+            aria-label="Quick links and weather"
+          >
             <WeatherWidget />
 
             <Advertisement />
 
-            <div className="p-3 border border-gray-400 bg-yellow-50">
+            <nav 
+              className="p-3 border border-gray-400 bg-yellow-50"
+              role="navigation"
+              aria-label="Quick links"
+            >
               <h4 className="mb-3 text-sm font-bold">📋 QUICK LINKS</h4>
               <ul className="space-y-2 font-serif text-xs">
                 <li>
@@ -32,6 +40,7 @@ export default function NewspaperLayout({ children }) {
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                     className="flex items-center w-full gap-2 text-left transition-colors cursor-pointer hover:text-blue-600"
+                    aria-label="Navigate to portfolio section"
                   >
                     📁 Portfolio Archive
                   </button>
@@ -44,6 +53,7 @@ export default function NewspaperLayout({ children }) {
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                     className="flex items-center w-full gap-2 text-left transition-colors cursor-pointer hover:text-blue-600"
+                    aria-label="Navigate to testimonials section"
                   >
                     💬 Client Testimonials
                   </button>
@@ -52,6 +62,7 @@ export default function NewspaperLayout({ children }) {
                   <a
                     href="#blog"
                     className="flex items-center gap-2 transition-colors cursor-pointer hover:text-blue-600"
+                    aria-label="Go to technical blog"
                   >
                     📝 Technical Blog
                   </a>
@@ -61,19 +72,30 @@ export default function NewspaperLayout({ children }) {
                     href="/resume-abdulla-farooq.pdf"
                     target="_blank"
                     className="flex items-center gap-2 transition-colors cursor-pointer hover:text-blue-600"
+                    aria-label="Download resume PDF (opens in new tab)"
                   >
                     📄 Resume Download
                   </a>
                 </li>
               </ul>
-            </div>
+            </nav>
           </aside>
 
           {/* Main content */}
-          <main className="col-span-12 lg:col-span-8">{children}</main>
+          <main 
+            className="col-span-12 lg:col-span-8"
+            role="main"
+            aria-label="Main content"
+          >
+            {children}
+          </main>
 
           {/* Right sidebar */}
-          <aside className="col-span-12 space-y-6 lg:col-span-2">
+          <aside 
+            className="col-span-12 space-y-6 lg:col-span-2"
+            role="complementary"
+            aria-label="Additional content and social links"
+          >
             <CrosswordTeaser />
 
             <div className="p-4 border-2 border-black bg-blue-50">

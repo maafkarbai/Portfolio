@@ -4,39 +4,43 @@ export default function NewspaperFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white py-8 px-4">
+    <footer 
+      className="bg-black text-white py-8 px-4"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Main footer content */}
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
+          <section aria-label="About The Farooq Times">
             <h3 className="font-heathergreen text-xl font-bold mb-4">THE FAROOQ TIMES</h3>
             <p className="font-serif text-sm text-gray-300 leading-relaxed">
               Your premier source for cutting-edge web development news, project updates, 
               and digital innovation coverage.
             </p>
-          </div>
+          </section>
 
-          <div>
+          <nav aria-label="Site departments">
             <h4 className="font-bold mb-4 tracking-wider">DEPARTMENTS</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><Link href="/about" className="hover:text-white transition-colors cursor-pointer">About</Link></li>
-              <li><Link href="/projects" className="hover:text-white transition-colors cursor-pointer">Projects</Link></li>
-              <li><Link href="/resume" className="hover:text-white transition-colors cursor-pointer">Resume</Link></li>
-              <li><Link href="/#contact" className="hover:text-white transition-colors cursor-pointer">Classifieds</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors cursor-pointer" aria-label="Go to About page">About</Link></li>
+              <li><Link href="/projects" className="hover:text-white transition-colors cursor-pointer" aria-label="Go to Projects page">Projects</Link></li>
+              <li><Link href="/resume" className="hover:text-white transition-colors cursor-pointer" aria-label="Go to Resume page">Resume</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors cursor-pointer" aria-label="Go to Contact section">Classifieds</Link></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Social media links">
             <h4 className="font-bold mb-4 tracking-wider">CONNECT</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer">GitHub Bureau</a></li>
-              <li><a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer">LinkedIn Office</a></li>
-              <li><a href="#" className="hover:text-white transition-colors cursor-pointer">Twitter Wire</a></li>
-              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer">Email Telegraph</a></li>
+              <li><a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit GitHub profile (opens in new tab)">GitHub Bureau</a></li>
+              <li><a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit LinkedIn profile (opens in new tab)">LinkedIn Office</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit Twitter profile">Twitter Wire</a></li>
+              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer" aria-label="Send email">Email Telegraph</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <section aria-label="Services offered">
             <h4 className="font-bold mb-4 tracking-wider">SERVICES</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
               <li>Web Development</li>
@@ -44,7 +48,7 @@ export default function NewspaperFooter() {
               <li>Database Design</li>
               <li>API Development</li>
             </ul>
-          </div>
+          </section>
         </div>
 
         {/* Bottom border and copyright */}

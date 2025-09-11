@@ -10,7 +10,7 @@ export default function NewspaperHeader() {
   };
 
   return (
-    <motion.header
+    <motion.div
       className="sticky top-0 z-50 bg-white border-b-2 border-black shadow-sm"
       initial={{ y: -50 }}
       animate={{ y: 0 }}
@@ -40,28 +40,33 @@ export default function NewspaperHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
+            role="navigation"
+            aria-label="Main navigation"
           >
             <button
               onClick={() => scrollToSection("hero")}
               className="py-2 transition-colors cursor-pointer hover:text-gray-600"
+              aria-label="Navigate to About section"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("projects")}
               className="py-2 transition-colors cursor-pointer hover:text-gray-600"
+              aria-label="Navigate to Projects section"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="px-4 py-2 text-white transition-colors bg-black cursor-pointer hover:bg-gray-800"
+              aria-label="Navigate to Contact section"
             >
               Contact
             </button>
           </motion.nav>
         </div>
       </div>
-    </motion.header>
+    </motion.div>
   );
 }

@@ -10,8 +10,10 @@ import { BreakingNews } from "@/components/NewspaperDecorations";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <BreakingNews message="Portfolio 2.0 launched with newspaper theme! Full-stack developer available for hire." />
-      <NewspaperHeader />
+      <header role="banner">
+        <BreakingNews message="Portfolio 2.0 launched with newspaper theme! Full-stack developer available for hire." />
+        <NewspaperHeader />
+      </header>
       <NewspaperLayout>
         <HeroSection />
         <ProjectsSection />
