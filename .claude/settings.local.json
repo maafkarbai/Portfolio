@@ -12,7 +12,8 @@
       "Bash(taskkill:*)",
       "Bash(del /F prisma\\dev.db*)",
       "Bash(powershell:*)",
-      "Bash(git stash pop:*)"
+      "Bash(git stash pop:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
