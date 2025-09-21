@@ -15,19 +15,32 @@ export default function Home() {
       <HeroSection />
 
       {/* Services Section */}
-      <section
-        id="services"
-        className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white"
-      >
+      <section id="services" className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center animate-fade-in">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
-              Our Services
-            </h2>
-            <div className="w-20 h-1 bg-[#4689ec] mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl leading-8 text-gray-600">
-              Complete digital solutions tailored to your business needs
-            </p>
+          <div className="mx-auto max-w-4xl mb-16">
+            {/* F-shaped layout: Strong headline on left, supporting content flows right */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
+                  Our Services
+                </h2>
+                <div className="w-20 h-1 bg-[#4689ec] mb-6 rounded-full"></div>
+                <p className="text-xl leading-8 text-gray-600">
+                  Complete digital solutions tailored to your business needs. We
+                  create powerful web experiences that drive growth.
+                </p>
+              </div>
+              <div className="lg:col-span-4">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[#4689ec] mb-1">
+                      100+
+                    </div>
+                    <p className="text-sm text-gray-600">Projects Completed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <div className="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
@@ -35,7 +48,6 @@ export default function Home() {
                 href="#contact"
                 className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#4689ec]/20 transition-all duration-300 hover:-translate-y-2 animate-fade-in cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4689ec]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative">
                   <div className="w-12 h-12 bg-[#4689ec]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#4689ec]/20 transition-colors duration-300">
                     <svg
@@ -82,7 +94,6 @@ export default function Home() {
                 className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#4689ec]/20 transition-all duration-300 hover:-translate-y-2 animate-fade-in cursor-pointer"
                 style={{ animationDelay: "150ms" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4689ec]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative">
                   <div className="w-12 h-12 bg-[#4689ec]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#4689ec]/20 transition-colors duration-300">
                     <svg
@@ -129,7 +140,6 @@ export default function Home() {
                 className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#4689ec]/20 transition-all duration-300 hover:-translate-y-2 animate-fade-in cursor-pointer"
                 style={{ animationDelay: "300ms" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4689ec]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative">
                   <div className="w-12 h-12 bg-[#4689ec]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#4689ec]/20 transition-colors duration-300">
                     <svg
@@ -177,10 +187,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section
-        id="about"
-        className="py-24 sm:py-32 bg-gradient-to-r from-gray-50 via-white to-blue-50/20"
-      >
+      <section id="about" className="py-24 sm:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side - Content */}
@@ -202,7 +209,7 @@ export default function Home() {
                 success.
               </p>
               <Link href="#contact">
-                <Button className="bg-gradient-to-r from-[#4689ec] to-[#3a7bd5] hover:from-[#3a7bd5] hover:to-[#4689ec] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl px-10 py-4 font-semibold text-lg">
+                <Button className="bg-[#4689ec] hover:bg-[#3a7bd5] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl px-10 py-4 font-semibold text-lg">
                   <span className="flex items-center">
                     Let's Work Together
                     <svg
@@ -229,7 +236,7 @@ export default function Home() {
               style={{ animationDelay: "200ms" }}
             >
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4689ec]/20 to-[#3a7bd5]/20 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#4689ec]/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                 <div className="relative">
                   <Image
                     src="/Team%20Picture.jpg"
@@ -239,7 +246,7 @@ export default function Home() {
                     className="rounded-2xl shadow-2xl object-cover w-full h-auto group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-black/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white font-semibold text-lg">
                       Our Amazing Team
@@ -258,10 +265,7 @@ export default function Home() {
       <TechnologiesSection />
 
       {/* Portfolio/Case Studies Section */}
-      <section
-        id="portfolio"
-        className="py-24 sm:py-32 bg-gradient-to-b from-white to-gray-50"
-      >
+      <section id="portfolio" className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center animate-fade-in">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
@@ -276,8 +280,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Case Study 1 */}
             <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-              <div className="aspect-video bg-gradient-to-br from-[#4A90E2]/10 to-[#2EC4B6]/10 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#4A90E2] to-[#2EC4B6] opacity-90"></div>
+              <div className="aspect-video bg-[#4A90E2]/10 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#4A90E2] opacity-90"></div>
                 <div className="relative text-white text-center">
                   <svg
                     className="w-16 h-16 mx-auto mb-4"
@@ -324,8 +328,8 @@ export default function Home() {
 
             {/* Case Study 2 */}
             <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-              <div className="aspect-video bg-gradient-to-br from-[#2EC4B6]/10 to-[#FF9505]/10 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#2EC4B6] to-[#FF9505] opacity-90"></div>
+              <div className="aspect-video bg-[#2EC4B6]/10 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#2EC4B6] opacity-90"></div>
                 <div className="relative text-white text-center">
                   <svg
                     className="w-16 h-16 mx-auto mb-4"
@@ -373,7 +377,7 @@ export default function Home() {
 
           <div className="text-center">
             <Link href="#contact">
-              <Button className="bg-gradient-to-r from-[#4A90E2] to-[#2EC4B6] hover:from-[#2EC4B6] hover:to-[#4A90E2] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl px-10 py-4 font-semibold text-lg">
+              <Button className="bg-[#4A90E2] hover:bg-[#2EC4B6] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl px-10 py-4 font-semibold text-lg">
                 <span className="flex items-center">
                   View More Projects
                   <svg
@@ -397,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 sm:py-32 bg-gradient-to-r from-gray-50 via-white to-blue-50/20">
+      <section className="py-24 sm:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center animate-fade-in">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
@@ -552,7 +556,7 @@ export default function Home() {
       <WhatMakesUsDifferent />
 
       {/* Free Resources Section */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-24 sm:py-32 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
@@ -590,7 +594,7 @@ export default function Home() {
                 and user experience.
               </p>
               <Link href="/contact">
-                <Button className="w-full bg-gradient-to-r from-[#4A90E2] to-[#2EC4B6] hover:from-[#2EC4B6] hover:to-[#4A90E2] text-white font-semibold py-3 rounded-xl">
+                <Button className="w-full bg-[#4A90E2] hover:bg-[#2EC4B6] text-white font-semibold py-3 rounded-xl">
                   Get Free Audit
                 </Button>
               </Link>

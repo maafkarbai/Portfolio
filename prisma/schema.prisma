@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -30,6 +30,7 @@ model User {
   email     String   @unique
   name      String?
   image     String?
+  role      String   @default("user") // user, admin
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -40,6 +41,7 @@ model User {
   notes         Note[]
   accounts      Account[]
   sessions      Session[]
+  blogPosts     BlogPost[]
 
   @@map("app_user")
 }
@@ -170,4 +172,50 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verification_token")
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  excerpt     String?
+  coverImage  String?
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  authorId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  tags   BlogTag[]
+  categories BlogCategory[]
+
+  @@map("blog_post")
+}
+
+model BlogTag {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  color String @default("#4A90E2")
+
+  // Relations
+  posts BlogPost[]
+
+  @@map("blog_tag")
+}
+
+model BlogCategory {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String?
+  color       String @default("#2EC4B6")
+
+  // Relations
+  posts BlogPost[]
+
+  @@map("blog_category")
 }

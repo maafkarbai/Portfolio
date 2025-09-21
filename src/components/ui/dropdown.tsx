@@ -42,12 +42,12 @@ export function Dropdown({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const selectedOption = options.find(option => option.value === value);
+  const selectedOption = options.find((option) => option.value === value);
 
   const sizeClasses = {
     sm: "px-3 py-2 text-sm",
     md: "px-4 py-3 text-base",
-    lg: "px-6 py-4 text-lg"
+    lg: "px-6 py-4 text-lg",
   };
 
   const variantClasses = {
@@ -59,18 +59,23 @@ export function Dropdown({
     outline: cn(
       "bg-transparent border-2 border-[#4A90E2] text-[#4A90E2]",
       "hover:bg-[#4A90E2]/5 focus:bg-[#4A90E2]/5 focus:ring-2 focus:ring-[#4A90E2]/20",
-      error && "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500/20"
+      error &&
+        "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500/20"
     ),
     ghost: cn(
       "bg-transparent border-2 border-transparent text-gray-700",
       "hover:bg-gray-100 hover:border-gray-200 focus:bg-white focus:border-[#4A90E2] focus:ring-2 focus:ring-[#4A90E2]/20",
-      error && "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500/20"
+      error &&
+        "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500/20"
     ),
   };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
         setFocusedIndex(-1);
       }
@@ -108,7 +113,8 @@ export function Dropdown({
         if (!isOpen) {
           setIsOpen(true);
         } else {
-          const nextIndex = focusedIndex < options.length - 1 ? focusedIndex + 1 : 0;
+          const nextIndex =
+            focusedIndex < options.length - 1 ? focusedIndex + 1 : 0;
           setFocusedIndex(nextIndex);
         }
         break;
@@ -117,7 +123,8 @@ export function Dropdown({
         if (!isOpen) {
           setIsOpen(true);
         } else {
-          const prevIndex = focusedIndex > 0 ? focusedIndex - 1 : options.length - 1;
+          const prevIndex =
+            focusedIndex > 0 ? focusedIndex - 1 : options.length - 1;
           setFocusedIndex(prevIndex);
         }
         break;
@@ -140,7 +147,7 @@ export function Dropdown({
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>
       )}
-      
+
       <button
         ref={triggerRef}
         type="button"
@@ -160,18 +167,13 @@ export function Dropdown({
       >
         <span className="flex items-center">
           {selectedOption?.icon && (
-            <span className="mr-3 flex-shrink-0">
-              {selectedOption.icon}
-            </span>
+            <span className="mr-3 flex-shrink-0">{selectedOption.icon}</span>
           )}
-          <span className={cn(
-            "truncate",
-            !selectedOption && "text-gray-500"
-          )}>
+          <span className={cn("truncate", !selectedOption && "text-gray-500")}>
             {selectedOption ? selectedOption.label : placeholder}
           </span>
         </span>
-        
+
         <svg
           className={cn(
             "ml-3 h-5 w-5 transition-transform duration-200 flex-shrink-0",
@@ -183,14 +185,29 @@ export function Dropdown({
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
       {error && (
         <p className="mt-2 text-sm text-red-600 flex items-center">
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            className="w-4 h-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
           {error}
         </p>
@@ -201,7 +218,11 @@ export function Dropdown({
         <div className="absolute z-50 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-2xl max-h-60 overflow-auto">
           <ul role="listbox" className="py-2">
             {options.map((option, index) => (
-              <li key={option.value} role="option" aria-selected={option.value === value}>
+              <li
+                key={option.value}
+                role="option"
+                aria-selected={option.value === value}
+              >
                 <button
                   type="button"
                   onClick={() => handleSelect(option)}
@@ -211,15 +232,17 @@ export function Dropdown({
                     "w-full flex items-center px-4 py-3 text-left transition-colors duration-150",
                     "disabled:opacity-50 disabled:cursor-not-allowed",
                     option.value === value && "bg-[#4A90E2]/10 text-[#4A90E2]",
-                    focusedIndex === index && option.value !== value && "bg-gray-50",
-                    !option.disabled && option.value !== value && "hover:bg-gray-50",
+                    focusedIndex === index &&
+                      option.value !== value &&
+                      "bg-gray-50",
+                    !option.disabled &&
+                      option.value !== value &&
+                      "hover:bg-gray-50",
                     option.disabled && "text-gray-400"
                   )}
                 >
                   {option.icon && (
-                    <span className="mr-3 flex-shrink-0">
-                      {option.icon}
-                    </span>
+                    <span className="mr-3 flex-shrink-0">{option.icon}</span>
                   )}
                   <span className="truncate">{option.label}</span>
                   {option.value === value && (
@@ -230,13 +253,18 @@ export function Dropdown({
                       viewBox="0 0 24 24"
                       aria-hidden="true"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   )}
                 </button>
               </li>
             ))}
-            
+
             {options.length === 0 && (
               <li className="px-4 py-3 text-gray-500 text-center">
                 No options available
@@ -279,7 +307,10 @@ export function MultiSelect({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -290,11 +321,11 @@ export function MultiSelect({
 
   const handleToggleOption = (optionValue: string) => {
     if (disabled) return;
-    
+
     const isSelected = values.includes(optionValue);
-    
+
     if (isSelected) {
-      onChange(values.filter(v => v !== optionValue));
+      onChange(values.filter((v) => v !== optionValue));
     } else {
       if (!maxSelections || values.length < maxSelections) {
         onChange([...values, optionValue]);
@@ -302,7 +333,9 @@ export function MultiSelect({
     }
   };
 
-  const selectedOptions = options.filter(option => values.includes(option.value));
+  const selectedOptions = options.filter((option) =>
+    values.includes(option.value)
+  );
 
   return (
     <div className={cn("relative", className)} ref={dropdownRef}>
@@ -312,7 +345,7 @@ export function MultiSelect({
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>
       )}
-      
+
       <button
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
@@ -348,7 +381,7 @@ export function MultiSelect({
             <span className="text-gray-500 truncate">{placeholder}</span>
           )}
         </div>
-        
+
         <svg
           className={cn(
             "ml-3 h-5 w-5 transition-transform duration-200 flex-shrink-0",
@@ -359,14 +392,29 @@ export function MultiSelect({
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
       {error && (
         <p className="mt-2 text-sm text-red-600 flex items-center">
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            className="w-4 h-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
           {error}
         </p>
@@ -378,8 +426,12 @@ export function MultiSelect({
           <div className="py-2">
             {options.map((option) => {
               const isSelected = values.includes(option.value);
-              const isDisabled = option.disabled || (maxSelections && !isSelected && values.length >= maxSelections);
-              
+              const isDisabled =
+                option.disabled ||
+                (maxSelections &&
+                  !isSelected &&
+                  values.length >= maxSelections);
+
               return (
                 <button
                   key={option.value}
@@ -394,28 +446,40 @@ export function MultiSelect({
                     isDisabled && "text-gray-400"
                   )}
                 >
-                  <div className={cn(
-                    "w-5 h-5 border-2 rounded mr-3 flex items-center justify-center transition-colors duration-150",
-                    isSelected ? "bg-[#4A90E2] border-[#4A90E2]" : "border-gray-300"
-                  )}>
+                  <div
+                    className={cn(
+                      "w-5 h-5 border-2 rounded mr-3 flex items-center justify-center transition-colors duration-150",
+                      isSelected
+                        ? "bg-[#4A90E2] border-[#4A90E2]"
+                        : "border-gray-300"
+                    )}
+                  >
                     {isSelected && (
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={3}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     )}
                   </div>
-                  
+
                   {option.icon && (
-                    <span className="mr-3 flex-shrink-0">
-                      {option.icon}
-                    </span>
+                    <span className="mr-3 flex-shrink-0">{option.icon}</span>
                   )}
-                  
+
                   <span className="truncate">{option.label}</span>
                 </button>
               );
             })}
-            
+
             {options.length === 0 && (
               <div className="px-4 py-3 text-gray-500 text-center">
                 No options available
