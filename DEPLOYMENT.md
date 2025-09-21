@@ -16,6 +16,7 @@ Your contact form is failing because SQLite doesn't work on Vercel's serverless 
 ### Option 2: External PostgreSQL Provider
 
 Choose one of these providers:
+
 - **Neon** (recommended for simplicity): https://neon.tech
 - **Supabase**: https://supabase.com
 - **Railway**: https://railway.app
