@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ClassifiedsSection() {
@@ -12,6 +12,51 @@ export default function ClassifiedsSection() {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [turnstileReady, setTurnstileReady] = useState(false);
+  const turnstileRef = useRef(null);
+
+  useEffect(() => {
+    const loadTurnstile = () => {
+      if (window.turnstile) {
+        setTurnstileReady(true);
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        setTurnstileReady(true);
+      };
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    };
+
+    loadTurnstile();
+  }, []);
+
+  useEffect(() => {
+    if (turnstileReady && turnstileRef.current && !turnstileToken) {
+      window.turnstile.render(turnstileRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+        action: 'contact-form',
+        callback: (token) => {
+          setTurnstileToken(token);
+        },
+        'error-callback': () => {
+          setTurnstileToken('');
+        },
+        'expired-callback': () => {
+          setTurnstileToken('');
+        },
+      });
+    }
+  }, [turnstileReady, turnstileToken]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -39,7 +84,12 @@ export default function ClassifiedsSection() {
     } else if (formData.message.trim().length > 1000) {
       newErrors.message = 'Message must be less than 1000 characters';
     }
-    
+
+    // Turnstile validation
+    if (!turnstileToken) {
+      newErrors.turnstile = 'Please complete the security verification';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -60,7 +110,10 @@ export default function ClassifiedsSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken
+        }),
       });
 
       const data = await response.json();
@@ -68,7 +121,11 @@ export default function ClassifiedsSection() {
       if (response.ok) {
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
+        setTurnstileToken('');
         setErrors({});
+        if (window.turnstile && turnstileRef.current) {
+          window.turnstile.reset(turnstileRef.current);
+        }
       } else {
         setApiError(data.error || 'Failed to send message. Please try again.');
       }
@@ -252,11 +309,33 @@ export default function ClassifiedsSection() {
                 )}
               </motion.div>
 
-              <motion.div 
+              {/* Turnstile Widget */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                viewport={{ once: true }}
+                className="flex justify-center pt-6"
+              >
+                <div className="w-full max-w-xs">
+                  <div ref={turnstileRef} className="mx-auto"></div>
+                  {errors.turnstile && (
+                    <motion.p
+                      className="text-red-600 text-sm mt-2 font-serif text-center"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                    >
+                      {errors.turnstile}
+                    </motion.p>
+                  )}
+                </div>
+              </motion.div>
+
+              <motion.div
                 className="text-center pt-6"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.7 }}
                 viewport={{ once: true }}
               >
                 {apiError && (
@@ -271,7 +350,7 @@ export default function ClassifiedsSection() {
                 
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting || Object.keys(errors).some(key => errors[key])}
+                  disabled={isSubmitting || Object.keys(errors).some(key => errors[key]) || !turnstileToken}
                   className="bg-black text-white px-12 py-4 text-lg font-mono tracking-wider hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors border-2 border-black cursor-pointer"
                   whileHover={!isSubmitting ? { scale: 1.05 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.95 } : {}}

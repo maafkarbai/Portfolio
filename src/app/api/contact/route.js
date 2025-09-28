@@ -1,15 +1,49 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
+import { TurnstileValidator } from '@/lib/turnstile';
 
 export async function POST(request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message, turnstileToken } = await request.json();
 
     // Validate input
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate Turnstile token
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: 'Security verification required' },
+        { status: 400 }
+      );
+    }
+
+    if (!process.env.TURNSTILE_SECRET_KEY) {
+      console.error('TURNSTILE_SECRET_KEY not configured');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
+    const validator = new TurnstileValidator(process.env.TURNSTILE_SECRET_KEY);
+    const clientIP = request.headers.get('x-forwarded-for') ||
+                     request.headers.get('x-real-ip') ||
+                     '127.0.0.1';
+
+    const turnstileResult = await validator.validate(turnstileToken, clientIP, {
+      expectedAction: 'contact-form'
+    });
+
+    if (!turnstileResult.success) {
+      console.error('Turnstile validation failed:', turnstileResult.error);
+      return NextResponse.json(
+        { error: 'Security verification failed. Please try again.' },
         { status: 400 }
       );
     }
