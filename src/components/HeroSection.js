@@ -147,7 +147,7 @@ export default function HeroSection() {
 
         {/* Social Links */}
         <motion.div
-          className="flex justify-center gap-6 mt-8 pt-6 border-t border-gray-300"
+          className="flex justify-center gap-4 mt-8 pt-6 border-t border-gray-300 flex-wrap"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.6 }}
@@ -181,6 +181,50 @@ export default function HeroSection() {
               className="filter invert"
             />
             LinkedIn
+          </motion.a>
+          <motion.a
+            href="https://twitter.com/abdullafarooq"
+            target="_blank"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
+            whileHover={{ y: -2 }}
+          >
+            <Image
+              src="/twitter.png"
+              alt="Twitter"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            Twitter
+          </motion.a>
+          <motion.a
+            href="https://instagram.com/abdullafarooq"
+            target="_blank"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
+            whileHover={{ y: -2 }}
+          >
+            <Image
+              src="/instagram.png"
+              alt="Instagram"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            Instagram
+          </motion.a>
+          <motion.a
+            href="#hero"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
+            whileHover={{ y: -2 }}
+          >
+            <Image
+              src="/website.png"
+              alt="Portfolio"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            Portfolio
           </motion.a>
           <motion.a
             href="mailto:voilad8a@gmail.com"
