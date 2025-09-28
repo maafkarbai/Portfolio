@@ -1,7 +1,17 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ProjectsSection() {
+  const getTechIcon = (tech) => {
+    const iconMap = {
+      'Next.js': '/nextjslogo.svg',
+      'TypeScript': '/typescript.png',
+      'Node.js': '/node-js.png'
+    };
+    return iconMap[tech] || null;
+  };
+
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -110,18 +120,30 @@ export default function ProjectsSection() {
                     TECH STACK
                   </h5>
                   <div className="space-y-2">
-                    {project.technologies.map((tech, i) => (
-                      <motion.div 
-                        key={i} 
-                        className="bg-gray-100 p-3 text-sm font-mono border border-gray-300"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 + (i * 0.1) }}
-                        viewport={{ once: true }}
-                      >
-                        {tech}
-                      </motion.div>
-                    ))}
+                    {project.technologies.map((tech, i) => {
+                      const iconSrc = getTechIcon(tech);
+                      return (
+                        <motion.div
+                          key={i}
+                          className="bg-gray-100 p-3 text-sm font-mono border border-gray-300 flex items-center gap-2"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.3 + (i * 0.1) }}
+                          viewport={{ once: true }}
+                        >
+                          {iconSrc && (
+                            <Image
+                              src={iconSrc}
+                              alt={`${tech} icon`}
+                              width={16}
+                              height={16}
+                              className="flex-shrink-0"
+                            />
+                          )}
+                          {tech}
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

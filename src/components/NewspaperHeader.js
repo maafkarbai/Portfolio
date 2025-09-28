@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function NewspaperHeader() {
@@ -26,6 +27,13 @@ export default function NewspaperHeader() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
+            <Image
+              src="/AbdullaSVGLOGO.svg"
+              alt="Abdulla Farooq Logo"
+              width={40}
+              height={40}
+              className="w-8 h-8 md:w-10 md:h-10"
+            />
             <h1 className="text-2xl font-bold tracking-wider font-heathergreen md:text-3xl">
               ABDULLA FAROOQ
             </h1>

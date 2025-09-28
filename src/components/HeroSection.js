@@ -146,34 +146,55 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Social Links */}
-        <motion.div 
+        <motion.div
           className="flex justify-center gap-6 mt-8 pt-6 border-t border-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.6 }}
         >
-          <motion.a 
-            href="https://github.com/maafkarbai" 
+          <motion.a
+            href="https://github.com/maafkarbai"
             target="_blank"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            💻 GitHub
+            <Image
+              src="/github.png"
+              alt="GitHub"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            GitHub
           </motion.a>
-          <motion.a 
-            href="https://linkedin.com/in/abdullafarooq" 
+          <motion.a
+            href="https://linkedin.com/in/abdullafarooq"
             target="_blank"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            💼 LinkedIn
+            <Image
+              src="/linkedin.png"
+              alt="LinkedIn"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            LinkedIn
           </motion.a>
-          <motion.a 
+          <motion.a
             href="mailto:voilad8a@gmail.com"
-            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer"
+            className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            📧 Email
+            <Image
+              src="/EmailIcon.png"
+              alt="Email"
+              width={20}
+              height={20}
+              className="filter invert"
+            />
+            Email
           </motion.a>
         </motion.div>
       </div>

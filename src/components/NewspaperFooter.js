@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function NewspaperFooter() {
   const currentYear = new Date().getFullYear();
@@ -33,10 +34,43 @@ export default function NewspaperFooter() {
           <nav aria-label="Social media links">
             <h4 className="font-bold mb-4 tracking-wider">CONNECT</h4>
             <ul className="font-serif text-sm space-y-2 text-gray-300">
-              <li><a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit GitHub profile (opens in new tab)">GitHub Bureau</a></li>
-              <li><a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit LinkedIn profile (opens in new tab)">LinkedIn Office</a></li>
+              <li>
+                <a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Visit GitHub profile (opens in new tab)">
+                  <Image
+                    src="/github.png"
+                    alt="GitHub"
+                    width={16}
+                    height={16}
+                    className="filter invert opacity-75"
+                  />
+                  GitHub Bureau
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Visit LinkedIn profile (opens in new tab)">
+                  <Image
+                    src="/linkedin.png"
+                    alt="LinkedIn"
+                    width={16}
+                    height={16}
+                    className="filter invert opacity-75"
+                  />
+                  LinkedIn Office
+                </a>
+              </li>
               <li><a href="#" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit Twitter profile">Twitter Wire</a></li>
-              <li><a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer" aria-label="Send email">Email Telegraph</a></li>
+              <li>
+                <a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Send email">
+                  <Image
+                    src="/EmailIcon.png"
+                    alt="Email"
+                    width={16}
+                    height={16}
+                    className="filter invert opacity-75"
+                  />
+                  Email Telegraph
+                </a>
+              </li>
             </ul>
           </nav>
 
