@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function NewspaperFooter() {
   const currentYear = new Date().getFullYear();
@@ -36,38 +37,25 @@ export default function NewspaperFooter() {
             <ul className="font-serif text-sm space-y-2 text-gray-300">
               <li>
                 <a href="https://github.com/maafkarbai" target="_blank" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Visit GitHub profile (opens in new tab)">
-                  <Image
-                    src="/github.png"
-                    alt="GitHub"
-                    width={16}
-                    height={16}
-                    className="filter invert opacity-75"
-                  />
+                  <FaGithub size={16} className="text-white" />
                   GitHub Bureau
                 </a>
               </li>
               <li>
                 <a href="https://linkedin.com/in/abdullafarooq" target="_blank" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Visit LinkedIn profile (opens in new tab)">
-                  <Image
-                    src="/linkedin.png"
-                    alt="LinkedIn"
-                    width={16}
-                    height={16}
-                    className="filter invert opacity-75"
-                  />
+                  <FaLinkedin size={16} className="text-[#0A66C2]" />
                   LinkedIn Office
                 </a>
               </li>
-              <li><a href="#" className="hover:text-white transition-colors cursor-pointer" aria-label="Visit Twitter profile">Twitter Wire</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Visit X (Twitter) profile">
+                  <FaXTwitter size={16} className="text-white" />
+                  Twitter Wire
+                </a>
+              </li>
               <li>
                 <a href="mailto:voilad8a@gmail.com" className="hover:text-white transition-colors cursor-pointer flex items-center gap-2" aria-label="Send email">
-                  <Image
-                    src="/EmailIcon.png"
-                    alt="Email"
-                    width={16}
-                    height={16}
-                    className="filter invert opacity-75"
-                  />
+                  <FaEnvelope size={16} className="text-white" />
                   Email Telegraph
                 </a>
               </li>

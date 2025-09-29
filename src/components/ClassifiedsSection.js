@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 export default function ClassifiedsSection() {
   const [formData, setFormData] = useState({
@@ -380,19 +381,21 @@ export default function ClassifiedsSection() {
           <div className="border-t border-black pt-8">
             <h3 className="font-bold text-xl mb-6">OR REACH OUT DIRECTLY:</h3>
             <div className="flex flex-col sm:flex-row justify-center gap-6 text-lg">
-              <motion.a 
-                href="mailto:voilad8a@gmail.com" 
-                className="font-mono hover:underline cursor-pointer"
+              <motion.a
+                href="mailto:voilad8a@gmail.com"
+                className="font-mono hover:underline cursor-pointer flex items-center gap-2 justify-center"
                 whileHover={{ scale: 1.05 }}
               >
-                📧 voilad8a@gmail.com
+                <FaEnvelope size={18} className="text-gray-600" />
+                voilad8a@gmail.com
               </motion.a>
-              <motion.a 
-                href="tel:+97433209192" 
-                className="font-mono hover:underline cursor-pointer"
+              <motion.a
+                href="tel:+97433209192"
+                className="font-mono hover:underline cursor-pointer flex items-center gap-2 justify-center"
                 whileHover={{ scale: 1.05 }}
               >
-                📱 +974 3320 9192
+                <FaPhone size={18} className="text-gray-600" />
+                +974 3320 9192
               </motion.a>
             </div>
           </div>

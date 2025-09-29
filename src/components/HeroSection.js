@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaGlobe } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -158,13 +160,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/github.png"
-              alt="GitHub"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaGithub size={20} className="text-white" />
             GitHub
           </motion.a>
           <motion.a
@@ -173,13 +169,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/linkedin.png"
-              alt="LinkedIn"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaLinkedin size={20} className="text-[#0A66C2]" />
             LinkedIn
           </motion.a>
           <motion.a
@@ -188,13 +178,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/twitter.png"
-              alt="Twitter"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaXTwitter size={20} className="text-white" />
             Twitter
           </motion.a>
           <motion.a
@@ -203,13 +187,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/instagram.png"
-              alt="Instagram"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaInstagram size={20} className="text-[#E4405F]" />
             Instagram
           </motion.a>
           <motion.a
@@ -217,13 +195,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/website.png"
-              alt="Portfolio"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaGlobe size={20} className="text-white" />
             Portfolio
           </motion.a>
           <motion.a
@@ -231,13 +203,7 @@ export default function HeroSection() {
             className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             whileHover={{ y: -2 }}
           >
-            <Image
-              src="/EmailIcon.png"
-              alt="Email"
-              width={20}
-              height={20}
-              className="filter invert"
-            />
+            <FaEnvelope size={20} className="text-white" />
             Email
           </motion.a>
         </motion.div>

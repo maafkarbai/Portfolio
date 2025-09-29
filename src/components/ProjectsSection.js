@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function ProjectsSection() {
   const getTechIcon = (tech) => {
@@ -95,20 +96,22 @@ export default function ProjectsSection() {
                   </div>
 
                   <div className="flex gap-4">
-                    <motion.a 
+                    <motion.a
                       href={project.demoUrl}
-                      className="bg-black text-white px-6 py-3 font-mono hover:bg-gray-800 transition-colors cursor-pointer"
+                      className="bg-black text-white px-6 py-3 font-mono hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <FaExternalLinkAlt size={16} />
                       VIEW DEMO
                     </motion.a>
-                    <motion.a 
+                    <motion.a
                       href={project.githubUrl}
-                      className="border-2 border-black px-6 py-3 font-mono hover:bg-black hover:text-white transition-colors cursor-pointer"
+                      className="border-2 border-black px-6 py-3 font-mono hover:bg-black hover:text-white transition-colors cursor-pointer flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <FaGithub size={16} />
                       VIEW CODE
                     </motion.a>
                   </div>
